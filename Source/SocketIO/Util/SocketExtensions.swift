@@ -23,7 +23,7 @@
 //  THE SOFTWARE.
 
 import Foundation
-import Starscream
+import ORMStarscream
 
 enum JSONError : Error {
     case notArray
