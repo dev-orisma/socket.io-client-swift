@@ -533,7 +533,12 @@ open class SocketManager : NSObject, SocketManagerSpec, SocketParsable, SocketDa
             _config.insert(.secure(true))
         }
 
-        _config.insert(.path("/socket.io/"), replacing: false)
+//        _config.insert(.path("/socket.io/"), replacing: false)
+        var _configPath = "/chat_api/"
+        #if DEBUG
+//            print("socket->000-DEBUG")
+            _configPath = "/socket.io/"
+        #endif
 
         // If `ConfigSettable` & `SocketEngineSpec`, update its configs.
         if var settableEngine = engine as? ConfigSettable & SocketEngineSpec {
